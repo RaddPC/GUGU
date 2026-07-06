@@ -49,16 +49,16 @@
           <a href="#resultados" class="btn btn--ghost">Ver resultados →</a>
         </div>
       </div>
-      <div class="hero__mark" aria-hidden="true">
-        <svg viewBox="0 0 400 400" class="hero__arrow">
-          <defs>
-            <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="6" refY="5" orient="auto">
-              <polygon points="0 0, 10 5, 0 10" fill="var(--lime)"/>
-            </marker>
-          </defs>
-          <path d="M 40 340 C 120 340, 140 220, 200 220 S 280 120, 360 60" stroke="var(--lime)" stroke-width="6" fill="none" marker-end="url(#arrowhead)"/>
-          <circle cx="40" cy="340" r="8" fill="var(--lime)"/>
-        </svg>
+      <div class="hero__mark">
+        <video
+          class="hero__image"
+          src="assets/hero-video.mp4"
+          poster="assets/hero-poster.jpg"
+          autoplay
+          muted
+          loop
+          playsinline
+        ></video>
       </div>
     </div>
   </section>
@@ -73,7 +73,7 @@
   <section class="servicios" id="servicios">
     <div class="wrap">
       <p class="eyebrow eyebrow--dark">Lo que hacemos</p>
-      <h2>Todo lo que tu marca necesita para vender más</h2>
+      <h2>Todo lo que tu marca necesita para CREAR TU MARCA DIGITAL.</h2>
       <div class="servicios__grid">
 
         <article class="card">
@@ -128,13 +128,53 @@
     </div>
   </section>
 
+  <section class="servicios-full" aria-label="Nuestros servicios destacados">
+
+    <article class="servicio-full">
+      <img src="assets/servicio-branding.jpg" alt="Branding" class="servicio-full__img">
+      <div class="servicio-full__overlay">
+        <span class="servicio-full__num">01</span>
+        <h3>Branding</h3>
+        <p>Construimos marcas con identidad propia: visual, verbal y estratégica.</p>
+      </div>
+    </article>
+
+    <article class="servicio-full">
+      <img src="assets/servicio-presencia-digital.jpg" alt="Presencia digital" class="servicio-full__img">
+      <div class="servicio-full__overlay">
+        <span class="servicio-full__num">02</span>
+        <h3>Presencia digital</h3>
+        <p>Web, redes y contenido trabajando juntos para que te encuentren donde sea.</p>
+      </div>
+    </article>
+
+    <article class="servicio-full">
+      <img src="assets/servicio-servicio-digital.jpg" alt="Servicio digital" class="servicio-full__img">
+      <div class="servicio-full__overlay">
+        <span class="servicio-full__num">03</span>
+        <h3>Servicio digital</h3>
+        <p>Acompañamiento cercano y soporte constante durante toda la campaña.</p>
+      </div>
+    </article>
+
+    <article class="servicio-full">
+      <img src="assets/servicio-crecimiento-digital.jpg" alt="Crecimiento digital" class="servicio-full__img">
+      <div class="servicio-full__overlay">
+        <span class="servicio-full__num">04</span>
+        <h3>Crecimiento digital</h3>
+        <p>Estrategia y pauta enfocadas en un solo objetivo: crecer sin límites.</p>
+      </div>
+    </article>
+
+  </section>
+
   <section class="resultados" id="resultados">
     <div class="wrap resultados__grid">
       <div class="resultados__copy">
         <p class="eyebrow">Números, no promesas</p>
         <h2>Así medimos el crecimiento</h2>
         <p class="resultados__lead">Cada campaña vive en un dashboard compartido contigo. Ves lo mismo que vemos nosotros, en tiempo real.</p>
-        <img src="00.png" alt="Dashboard de resultados de campañas GUGU Marketing" class="resultados__img">
+        <img src="assets/banner-dashboard.jpg" alt="Dashboard de resultados de campañas GUGU Marketing" class="resultados__img">
       </div>
       <div class="stats" id="stats">
         <div class="stat">
@@ -163,16 +203,16 @@
       <h2>Marcas colombianas que ya crecen con nosotros</h2>
       <div class="testimonios__grid">
         <blockquote class="testimonio">
-          <p>“Pasamos de depender de referidos, a crear nuestra pagina web y redes sociales en menos de 1 mes.”</p>
-          <footer><strong>Milena Cuartas</strong><span>YeSeo Cosmetics</span></footer>
+          <p>“Pasamos de depender de referidos a tener un flujo constante de leads calificados en menos de 3 meses.”</p>
+          <footer><strong>Gonzalo Gil</strong><span>RaddPC</span></footer>
         </blockquote>
         <blockquote class="testimonio">
-          <p>“Lo que más valoro es la transparencia y ayuda, me ayudaron mucho en la creacion de contenido.”</p>
-          <footer><strong>Camilo Roja</strong><span>SmileKIT S.A.S.</span></footer>
+          <p>“Lo que más valoro es la transparencia: nunca tuve que preguntar en qué se estaba yendo el presupuesto.”</p>
+          <footer><strong>Camilo Rojas</strong><span>SmileKIT</span></footer>
         </blockquote>
         <blockquote class="testimonio">
           <p>“El equipo entendió nuestro negocio antes de proponer una sola campaña. Eso se nota en los resultados.”</p>
-          <footer><strong>Juan Tobon</strong><span>RaddPC</span></footer>
+          <footer><strong>Milena Cuartas</strong><span>YeseoCosmetics</span></footer>
         </blockquote>
       </div>
     </div>
@@ -181,7 +221,7 @@
   <section class="cta-final" id="contacto">
     <div class="wrap cta-final__inner">
       <h2>¿Listo para crecer sin límites?</h2>
-      <p>Agenda una llamada. Sin libreto de ventas, solo un diagnóstico honesto de tu marca en el mundo digital y qué te hace falta.</p>
+      <p>Escribenos. te decimos como diseñar,construir o escalar tu marca desde cero !!!</p>
       <form class="cta-form" id="contactForm" novalidate>
         <div class="cta-form__row">
           <input type="text" name="nombre" placeholder="Tu nombre" required aria-label="Tu nombre">
@@ -202,9 +242,9 @@
 <footer class="footer">
   <div class="wrap footer__inner">
     <img src="4.png" alt="GUGU Marketing" class="footer__logo">
-    <p class="footer__slogan">GUGU Marketing</p>
+    <p class="footer__slogan">Grow Unlimited</p>
     <div class="footer__links">
-      <a href="mailto:info.gugumarketing@gmail.com">info.gugumarketing@gmail.com</a>
+      <a href="info.gugumarketing@gmail.com">info.gugumarketing@gmail.com</a>
       <a href="#servicios">Servicios</a>
       <a href="#contacto">Contacto</a>
     </div>
@@ -212,6 +252,17 @@
   </div>
 </footer>
 
+<a
+  href="https://wa.me/573001234567?text=Hola%20GUGU%20Marketing%2C%20quiero%20m%C3%A1s%20informaci%C3%B3n"
+  class="whatsapp-float"
+  target="_blank"
+  rel="noopener"
+  aria-label="Escríbenos por WhatsApp"
+>
+  <svg viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M16.001 3C9.373 3 4 8.373 4 15c0 2.29.634 4.43 1.735 6.264L4 29l7.918-1.696A11.94 11.94 0 0 0 16.001 27C22.63 27 28 21.627 28 15S22.63 3 16.001 3Zm0 21.818a9.77 9.77 0 0 1-4.98-1.362l-.357-.212-4.7 1.007 1.02-4.583-.234-.372A9.77 9.77 0 0 1 5.2 15c0-5.964 4.837-10.8 10.801-10.8S26.8 9.036 26.8 15c0 5.964-4.836 10.818-10.799 10.818Zm5.945-8.083c-.324-.163-1.918-.947-2.215-1.055-.297-.108-.513-.163-.729.163-.216.325-.837 1.055-1.026 1.271-.189.217-.378.244-.702.081-.324-.163-1.368-.505-2.606-1.611-.963-.86-1.614-1.921-1.803-2.246-.189-.325-.02-.5.143-.663.146-.146.324-.379.486-.569.162-.19.216-.325.324-.542.108-.216.054-.406-.027-.569-.081-.163-.729-1.762-.999-2.413-.263-.633-.53-.548-.729-.558l-.62-.011a1.19 1.19 0 0 0-.864.406c-.297.325-1.134 1.109-1.134 2.704 0 1.596 1.161 3.137 1.323 3.354.162.217 2.286 3.492 5.538 4.897.774.334 1.377.534 1.847.684.776.247 1.482.212 2.041.129.623-.093 1.918-.784 2.188-1.541.27-.758.27-1.408.189-1.542-.081-.135-.297-.217-.62-.38Z"/>
+  </svg>
+</a>
 <script src="script.js"></script>
 </body>
 </html>
