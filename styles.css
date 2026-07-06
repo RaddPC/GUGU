@@ -185,7 +185,6 @@ p{ margin: 0; }
 }
 
 /* ---------- Servicios: bloques de imagen completa ---------- */
-/* ---------- Servicios: bloques de imagen completa ---------- */
 .servicios-full{
   display: flex;
   flex-direction: column;
@@ -242,12 +241,12 @@ p{ margin: 0; }
   line-height: 1.5;
   color: rgba(250,250,247,0.82);
 }
-/* Celular */
 @media (max-width: 640px){
   .servicio-full{ aspect-ratio: 4 / 5; }
   .servicio-full__overlay{ padding: 24px 18px; }
   .servicio-full__overlay p{ max-width: 32ch; }
 }
+
 /* ---------- Buttons ---------- */
 .btn{
   display: inline-flex;
@@ -512,7 +511,6 @@ p{ margin: 0; }
   .resultados__grid{ grid-template-columns: 1fr; }
   .stats{ margin-top: 10px; }
   .testimonios__grid{ grid-template-columns: 1fr; }
-  .servicio-full{ min-height: 50vh; }
 }
 
 @media (max-width: 640px){
