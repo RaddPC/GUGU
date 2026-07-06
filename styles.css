@@ -173,7 +173,69 @@ p{ margin: 0; }
   flex-wrap: wrap;
 }
 .hero__mark{ display: flex; justify-content: center; }
-.hero__arrow{ width: 100%; max-width: 340px; }
+.hero__image{
+  width: 100%;
+  height: 100%;
+  min-height: 340px;
+  max-height: 460px;
+  object-fit: cover;
+  border-radius: var(--radius);
+  border: 1px solid var(--line);
+  background: var(--black-soft);
+}
+
+/* ---------- Servicios: bloques de imagen completa ---------- */
+.servicios-full{
+  display: flex;
+  flex-direction: column;
+}
+.servicio-full{
+  position: relative;
+  min-height: 65vh;
+  display: flex;
+  align-items: flex-end;
+  overflow: hidden;
+}
+.servicio-full__img{
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.servicio-full::after{
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(11,11,12,0) 30%, rgba(11,11,12,0.88) 100%);
+}
+.servicio-full__overlay{
+  position: relative;
+  z-index: 1;
+  color: var(--white);
+  padding: 50px 24px;
+  max-width: var(--wrap);
+  margin: 0 auto;
+  width: 100%;
+}
+.servicio-full__num{
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 13px;
+  letter-spacing: 0.08em;
+  color: var(--lime);
+  margin-bottom: 10px;
+}
+.servicio-full__overlay h3{
+  font-size: clamp(1.8rem, 3.6vw, 2.8rem);
+  margin-bottom: 10px;
+}
+.servicio-full__overlay p{
+  max-width: 42ch;
+  font-size: 1rem;
+  line-height: 1.55;
+  color: rgba(250,250,247,0.82);
+}
 
 /* ---------- Buttons ---------- */
 .btn{
@@ -435,11 +497,11 @@ p{ margin: 0; }
 @media (max-width: 900px){
   .hero__grid{ grid-template-columns: 1fr; }
   .hero__mark{ order: -1; }
-  .hero__arrow{ max-width: 220px; }
   .servicios__grid{ grid-template-columns: 1fr 1fr; }
   .resultados__grid{ grid-template-columns: 1fr; }
   .stats{ margin-top: 10px; }
   .testimonios__grid{ grid-template-columns: 1fr; }
+  .servicio-full{ min-height: 50vh; }
 }
 
 @media (max-width: 640px){
@@ -464,4 +526,40 @@ p{ margin: 0; }
   .nav__burger{ display: flex; }
   .servicios__grid{ grid-template-columns: 1fr; }
   .cta-form__row{ grid-template-columns: 1fr; }
+}
+
+/* ---------- WhatsApp floating button ---------- */
+.whatsapp-float{
+  position: fixed;
+  right: 22px;
+  bottom: 22px;
+  width: 58px;
+  height: 58px;
+  background: #25D366;
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.28);
+  z-index: 999;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.whatsapp-float svg{
+  width: 30px;
+  height: 30px;
+}
+.whatsapp-float:hover{
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 10px 28px rgba(0,0,0,0.35);
+}
+
+@media (max-width: 640px){
+  .whatsapp-float{
+    right: 16px;
+    bottom: 16px;
+    width: 52px;
+    height: 52px;
+  }
+  .whatsapp-float svg{ width: 26px; height: 26px; }
 }
