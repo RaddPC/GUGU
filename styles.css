@@ -185,14 +185,14 @@ p{ margin: 0; }
 }
 
 /* ---------- Servicios: bloques de imagen completa ---------- */
+/* ---------- Servicios: bloques de imagen completa ---------- */
 .servicios-full{
   display: flex;
   flex-direction: column;
 }
 .servicio-full{
   position: relative;
-  min-height: 60vh;
-  min-height: 60dvh;
+  aspect-ratio: 16 / 9;
   display: flex;
   align-items: flex-end;
   overflow: hidden;
@@ -203,21 +203,21 @@ p{ margin: 0; }
   inset: 0;
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   object-position: center;
 }
 .servicio-full::after{
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(180deg, rgba(11,11,12,0) 30%, rgba(11,11,12,0.88) 100%);
+  background: linear-gradient(180deg, rgba(11,11,12,0) 40%, rgba(11,11,12,0.85) 100%);
   pointer-events: none;
 }
 .servicio-full__overlay{
   position: relative;
   z-index: 1;
   color: var(--white);
-  padding: 50px 24px;
+  padding: 40px 24px;
   max-width: var(--wrap);
   margin: 0 auto;
   width: 100%;
@@ -242,21 +242,11 @@ p{ margin: 0; }
   line-height: 1.5;
   color: rgba(250,250,247,0.82);
 }
-/* Tablet */
-@media (max-width: 900px){
-  .servicio-full{ min-height: 50vh; min-height: 50dvh; }
-  .servicio-full__overlay{ padding: 40px 20px; }
-}
 /* Celular */
 @media (max-width: 640px){
-  .servicio-full{ min-height: 340px; }
-  .servicio-full__overlay{ padding: 28px 18px; }
+  .servicio-full{ aspect-ratio: 4 / 5; }
+  .servicio-full__overlay{ padding: 24px 18px; }
   .servicio-full__overlay p{ max-width: 32ch; }
-}
-/* Celulares muy pequeños */
-@media (max-width: 380px){
-  .servicio-full{ min-height: 300px; }
-  .servicio-full__overlay{ padding: 22px 16px; }
 }
 /* ---------- Buttons ---------- */
 .btn{
