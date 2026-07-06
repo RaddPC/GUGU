@@ -65,15 +65,21 @@ document.addEventListener('DOMContentLoaded', () => {
     stats.forEach(animateCount);
   }
 
-  // Formulario de contacto (demo: sin backend conectado)
+  // Formulario de contacto → envía los datos por WhatsApp
   const form = document.getElementById('contactForm');
   const status = document.getElementById('formStatus');
+
+  // ⚠️ Reemplaza este número por el WhatsApp Business real de GUGU Marketing
+  // Formato: código de país + número, sin +, espacios ni guiones (ej. Colombia: 57 3001234567)
+  const WHATSAPP_NUMBER = '573015122607';
 
   if (form && status) {
     form.addEventListener('submit', (e) => {
       e.preventDefault();
       const nombre = form.nombre.value.trim();
       const email = form.email.value.trim();
+      const empresa = form.empresa.value.trim();
+      const whatsapp = form.whatsapp.value.trim();
 
       if (!nombre || !email) {
         status.textContent = 'Por favor completa nombre y correo.';
@@ -81,9 +87,21 @@ document.addEventListener('DOMContentLoaded', () => {
         return;
       }
 
-      // Aquí se conectaría un endpoint real (Formspree, backend propio, etc.)
-      status.textContent = `¡Gracias, ${nombre}! Te escribimos pronto a ${email}.`;
+      // Arma el mensaje con los datos del formulario
+      let mensaje = `Hola GUGU Marketing, quiero mas informacion.\n`;
+      mensaje += `Nombre: ${nombre}\n`;
+      mensaje += `Correo: ${email}\n`;
+      if (empresa) mensaje += `Empresa: ${empresa}\n`;
+      if (whatsapp) mensaje += `WhatsApp: ${whatsapp}\n`;
+
+      const url = `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(mensaje)}`;
+
+      status.textContent = `¡Gracias, ${nombre}! Te llevamos a WhatsApp para confirmar tus necesidades digitales...`;
       status.style.color = '#0B0B0C';
+
+      // Abre WhatsApp con el mensaje ya redactado
+      window.open(url, '_blank', 'noopener');
+
       form.reset();
     });
   }
